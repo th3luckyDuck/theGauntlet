@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<!-- The Gauntlet 
+       by Ducky 
+        V1.02b
+      
+      Built With:
+       Clara.io - www.Clara.io
+       Sublime Text - www.sublimetext.com
+       Altspace - developer.altvr.com
+
+      Thanks:
+       Brian
+       Altspace Team
+       Everyone who fell to their death over and over in the name of testing
+-->
+
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>The Gauntlet</title>
+    <meta name="The Gauntlet" content="The Gauntlet"> 
+
+    <!-- Java Script Loads -->
+
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Aframe Script -->
+
+    <!-- Start Scene -->
+ 
+    <a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">
+ 
+      <!-- Asset Loading -->
+
+      <a-assets>
+
+        <a-asset-item id="base-mtl" src="base.mtl"></a-asset-item>
+        <a-asset-item id="base-obj" src="base.obj"></a-asset-item>
+        <a-asset-item id="bl-obj" src="bl.obj"></a-asset-item>
+        <a-asset-item id="bc-obj" src="bc.obj"></a-asset-item>
+        <a-asset-item id="br-obj" src="br.obj"></a-asset-item>
+        <a-asset-item id="axe-obj" src="axe.obj"></a-asset-item>
+        <a-asset-item id="blade-obj" src="blade.obj"></a-asset-item>
+        <a-asset-item id="bat-obj" src="bat.obj"></a-asset-item>
+        <a-asset-item id="red-obj" src="red.obj"></a-asset-item>
+        <a-asset-item id="black-obj" src="black.obj"></a-asset-item>
+      
+        <!-- Image Assets --> 
+
+        <img id="sky" src="sky1.jpg">
+        <img id="bm" src="bm.1024x1024.jpg">
+        <img id="moon" src="moon.jpg">
+        <img id="welcome" src="welcome.jpg">
+
+      </a-assets>      
+      
+       <!-- Starting Entity Tag To Contain The Gauntlet-->
+
+      <a-entity id="scene" position="1 0 -46" rotation="0 0 0">
+
+       <!-- Adding Sounds -->
+
+       <a-entity id="screamsound" position="0 0 0" n-sound="src: scream.wav; on: scream; rolloff: logarithmic; minDistance: 1; maxDistance: 300" sync="own-on: scream" sync-n-sound></a-entity>
+       <a-entity id="batsound" position="-10 4 0" n-sound="src: bat.wav; on: bat; rolloff: logarithmic; minDistance: 1; maxDistance: 300" sync="own-on: bat" sync-n-sound></a-entity>
+       <a-entity id="swordsound" position="10.5 4 0" n-sound="src: sword.wav; on: sword; rolloff: logarithmic; minDistance: 1; maxDistance: 300" sync="own-on: sword" sync-n-sound></a-entity>
+       <a-entity id="winsound" position="16 4 0" n-sound="src: win.wav; on: win; rolloff: logarithmic; minDistance: 1; maxDistance: 300" sync="own-on: win" sync-n-sound></a-entity>
+
+       <!-- Adding The Base OBJ For The Course -->
+
+       <a-obj-model id="base1" scale="3 3 3" src="#base-obj" mtl="#base-mtl" position="0 0 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true" ></a-obj-model>
+
+       <!-- Adding The Sign -->
+
+       <a-obj-model scale="3 3 0.3" src="#black-obj" mtl="#base-mtl" position="0 4 0" rotation="0 0 0"></a-obj-model>
+
+       
+       <a-obj-model position="0 4 0" rotation="0 0 0" scale="3 3 3" src="#red-obj" mtl="#base-mtl">
+         <a-animation attribute="scale" easing="linear" delay="2000" dur="0.0001" repeat="indefinite" direction="alternate" from="3 3 3" to="0 0 0"></a-animation>
+       </a-obj-model>
+     
+
+       <!-- Adding The False Floor Tiles  -->
+
+       <a-obj-model id="bl" scale="3 3 3" src="#bl-obj" mtl="#base-mtl" position="0 3 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1600" repeat="indefinite" from="0 0 0" to="180 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="bc" scale="3 3 3" src="#bc-obj" mtl="#base-mtl" position="0 3 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1400" repeat="indefinite" from="0 0 0" to="180 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="br" scale="3 3 3" src="#br-obj" mtl="#base-mtl" position="0 3 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1200" repeat="indefinite" from="0 0 0" to="180 0 0"></a-animation>
+       </a-obj-model>
+
+       <!-- Adding The Blades -->
+
+       <a-obj-model id="axe1" scale="3 3 3" src="#axe-obj" mtl="#base-mtl" position="6 8 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1600" easing="linear" repeat="indefinite" from="0 0 0" to="360 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="blade1" scale="3 3 3" src="#blade-obj" mtl="#base-mtl" position="7.5 8 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1800" easing="linear" repeat="indefinite" from="0 0 0" to="360 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="axe1" scale="3 3 3" src="#axe-obj" mtl="#base-mtl" position="9 8 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1200" easing="linear" repeat="indefinite" from="0 0 0" to="360 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="blade1" scale="3 3 3" src="#blade-obj" mtl="#base-mtl" position="10.5 8 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1500" easing="linear" repeat="indefinite" from="0 0 0" to="360 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="axe1" scale="3 3 3" src="#axe-obj" mtl="#base-mtl" position="12 8 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1000" easing="linear" repeat="indefinite" from="0 0 0" to="360 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="blade1" scale="3 3 3" src="#blade-obj" mtl="#base-mtl" position="13.5 8 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1300" easing="linear" repeat="indefinite" from="0 0 0" to="360 0 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="axe1" scale="3 3 3" src="#axe-obj" mtl="#base-mtl" position="15 8 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="1100" easing="linear" repeat="indefinite" from="0 0 0" to="360 0 0"></a-animation>
+       </a-obj-model>
+
+       <!-- Adding the Bats -->
+
+       <a-obj-model id="bat1" scale="3 3 3" src="#bat-obj" mtl="#base-mtl" position="-12 0 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="2600" easing="linear" repeat="indefinite" from="0 0 0" to="0 360 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="bat1" scale="3 3 3" src="#bat-obj" mtl="#base-mtl" position="-10 0 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="2300" easing="linear" repeat="indefinite" from="0 0 0" to="0 360 0"></a-animation>
+       </a-obj-model>
+       <a-obj-model id="bat1" scale="3 3 3" src="#bat-obj" mtl="#base-mtl" position="-8 0 0" rotation="0 0 0" n-mesh-collider="type: environment; convex: true">
+         <a-animation attribute="rotation" dur="2000" easing="linear" repeat="indefinite" from="0 0 0" to="0 360 0"></a-animation>
+       </a-obj-model>
+
+       <!-- Adding The Containers To Trigger The Sound Effects -->
+
+       <a-entity id="fall" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size: 30 3.5 15" n-container="capacity:1" wire="on: container-full; emit: scream; targets: #screamsound"></a-entity>
+
+       <a-entity id="sword1" position="13 4 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1" wire="on: container-full; emit: sword; targets: #swordsound"></a-entity>
+       <a-entity id="sword2" position="10 4 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1" wire="on: container-full; emit: sword; targets: #swordsound"></a-entity>
+       <a-entity id="sword3" position="7 4 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1" wire="on: container-full; emit: sword; targets: #swordsound"></a-entity>
+
+       <a-entity id="bat1" position="-7 4 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1" wire="on: container-full; emit: bat; targets: #batsound"></a-entity>
+       <a-entity id="bat2" position="-10 4 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1" wire="on: container-full; emit: bat; targets: #batsound"></a-entity>
+       <a-entity id="bat2" position="-13 4 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1" wire="on: container-full; emit: bat; targets: #batsound"></a-entity>
+
+       <a-entity id="win1" position="16 4 0" n-box-collider="isTrigger:true; type:environment; size: 0.1 3 3" n-container="capacity:1" wire="on: container-full; emit: win; targets: #winsound, #win1">
+         <a-animation attribute="position" begin="win" dur="8000" easing="linear" from="16 400 0" to="16 4 0"></a-animation-->
+       </a-entity>
+
+     <!--End Of The Gauntlet Course Entity -->  
+            
+     </a-entity>
+
+      <!-- Adding The Elevator and Platform -->
+
+      <a-box id="ef" material="src: #bm; repeat: 1 1" depth="2" height=".25" width="2" position="-6.5 0.1 3" n-mesh-collider="type: environment; convex: true"></a-box>
+
+      <a-box id="el" material="src: #bm; repeat: 1 1" depth="2" height=".25" width="2" position="-6.5 11.5 3" n-mesh-collider="type: environment; convex: true" sync="own-on: up">
+        <a-animation attribute="position" begin="up" dur="10000" easing="linear" repeat="0" fill="forwards" from="-6.5 0.1 3" to="-6.5 11.5 3"></a-animation>
+      </a-box>
+
+      <a-box id="elva" color="red" scale="0.02 0.2 0.2" position="-5.7 1.5 3" wire="on: click; emit: up; targets: #el"></a-box>
+
+      <a-box id="wm" material="src: #welcome; repeat: 1 1" scale=".2 6.5 11.5" position="8.628 3.5 -1.9" sync="own-on: wmb">
+        <a-animation attribute="position" begin="wmb" dur="0.000001" easing="linear" repeat="0" fill="forwards" from="8.628 3.5 -1.9" to="8.628 10000 -1.9"></a-animation>
+      </a-box>
+
+      <a-box id="wm1" color="red"
+           scale="0.02 0.2 0.2" 
+           position="8.628 1.5 4.7" 
+           wire="on: click; emit: wmb; targets: #wm">
+      </a-box>
+
+
+      <!-- Adding Easter Eggs -->
+
+      <a-box id="m1" material="src: #bm; repeat: 1 1; visible: false"
+           depth=".3" height=".5" width=".3" position="-4.6 4.1 5" 
+           wire="on: click; emit: whoa; targets: #moe">
+      </a-box>
+
+      <a-box id="deck" material="src: #bm; repeat: 10 10" depth="15" height=".25" width="15" position="2 11.5 -1.5" n-mesh-collider="type: environment; convex: true"></a-box>
+
+     <!-- Adding The Sky Sphere And Moon -->
+
+      <a-sphere id="moon" position="10 0 -400" material="src: #moon; repeat: 1 1" position="0 0 0" radius="80" segments-width="16" segments-height="16" n-sphere-collider="type: environment"></a-sphere>
+      
+      <a-sky radius="1001" rotation="0 90 0" material="src: #sky; repeat: 15 15" segments-width="16" segments-height="16"></a-sky>
+
+    </a-scene>
+  </body>
+</html>
