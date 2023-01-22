@@ -73,7 +73,7 @@
 
        <!-- Adding The Sign -->
        
-       <a-entity position="0 4 0" rotation="0 0 0" scale="3 3 3" gltf-model="#red-gltf" animation="property: scale; dur: 0.0001; delay: 2000; direction: alternate; loop: true; from: 3 3 3; to: 0 0 0;"></a-entity>
+       <a-entity position="0 4 0" rotation="0 0 0" scale="3 3 3" gltf-model="#red-gltf" animation="property: scale; dur: 0.0001; delay: 2000; dir: alternate; loop: true; from: 3 3 3; to: 0 0 0;"></a-entity>
      
 
        <!-- Adding The False Floor Tiles  -->
@@ -115,6 +115,8 @@
      </a-entity>
 
      <!-- Adding The Sky Sphere -->
+
+      <a-sphere id="moon" position="10 0 -400" material="src: moon.jpg; repeat: 1 1" position="0 0 0" radius="80" segments-width="16" segments-height="16" sq-nonconvexcollider="recursive: true"></a-sphere>
       
       <a-sky radius="1001" rotation="0 90 0" material="src: #sky; repeat: 15 15" segments-width="16" segments-height="16"></a-sky>
 
