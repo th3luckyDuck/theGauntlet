@@ -48,6 +48,7 @@
         <a-asset-item id="blade-gltf" src="blade.gltf"></a-asset-item>
         <a-asset-item id="bat-gltf" src="bat.gltf"></a-asset-item>
         <a-asset-item id="red-gltf" src="red.gltf"></a-asset-item>
+        <a-asset-item id="black-gltf" src="black.gltf"></a-asset-item>
       
         <!-- Image Assets --> 
 
@@ -73,7 +74,14 @@
 
        <!-- Adding The Sign -->
        
-       <a-entity position="0 4 0" rotation="0 0 0" scale="3 3 3" gltf-model="#red-gltf" animation="property: scale; dur: 0.0001; delay: 2000; dir: alternate; loop: true; from: 3 3 3; to: 0 0 0;"></a-entity>
+       <a-entity position="0 4 0" rotation="0 0 0" scale="3 3 3" gltf-model="#red-gltf" animation="property: scale; dur: 0.0001; easing: linear; delay: 2000; dir: alternate; loop: true; from: 3 3 3; to: 0 0 0;"></a-entity>
+
+       <a-entity scale="3 3 0.3" gltf-model="#black-gltf" position="0 4 0" rotation="0 0 0"></a-entity>
+
+       
+       <a-obj-model position="0 4 0" rotation="0 0 0" scale="3 3 3" src="#red-obj" mtl="#base-mtl">
+         <a-animation attribute="scale" easing="linear" delay="2000" dur="0.0001" repeat="indefinite" direction="alternate" from="3 3 3" to="0 0 0"></a-animation>
+       </a-obj-model>
      
 
        <!-- Adding The False Floor Tiles  -->
