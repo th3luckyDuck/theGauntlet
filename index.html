@@ -84,41 +84,41 @@
        <!-- Adding The Sign -->
        
        <a-entity position="0 4 0" rotation="0 0 0" scale="3 3 3" gltf-model="#red-gltf">
-         <a-animation attribute="scale" easing="linear" delay="2000" dur="0.0001" repeat="indefinite" direction="alternate" from="3 3 3" to="0 0 0"></a-animation>
+         <a-animation attribute="scale" easing="linear" delay="2000" dur="0.0001" loop="true" direction="alternate" from="3 3 3" to="0 0 0"></a-animation>
        </a-entity>
      
 
        <!-- Adding The False Floor Tiles  -->
 
        <a-entity id="bl" scale="3 3 3" gltf-model="#bl-gltf" position="0 3 0" rotation="0 0 0" sq-nonconvexcollider="recursive: true">
-         <a-animation attribute="rotation" dur="1600" repeat="indefinite" from="0 0 0" to="180 0 0"></a-animation>
+         <a-animation attribute="rotation" dur="1600" loop="true" from="0 0 0" to="180 0 0"></a-animation>
        </a-entity>
        <a-entity id="bc" scale="3 3 3" gltf-model="#bc-gltf" position="0 3 0" rotation="0 0 0" sq-nonconvexcollider="recursive: true">
-         <a-animation attribute="rotation" dur="1400" repeat="indefinite" from="0 0 0" to="180 0 0"></a-animation>
+         <a-animation attribute="rotation" dur="1400" loop="true" from="0 0 0" to="180 0 0"></a-animation>
        </a-entity>
        <a-entity id="br" scale="3 3 3" gltf-model="#br-gltf" position="0 3 0" rotation="0 0 0" sq-nonconvexcollider="recursive: true">
-         <a-animation attribute="rotation" dur="1200" repeat="indefinite" from="0 0 0" to="180 0 0"></a-animation>
+         <a-animation attribute="rotation" dur="1200" loop="true" from="0 0 0" to="180 0 0"></a-animation>
        </a-entity>
 
        <!-- Adding The Blades -->
 
-       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="6 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; repeat: indefinite; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
-       <a-entity id="blade1" scale="3 3 3" gltf-model="#blade-gltf" position="7.5 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; repeat: indefinite; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
-       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="9 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; repeat: indefinite; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
-       <a-entity id="blade1" scale="3 3 3" gltf-model="#blade-gltf" position="10.5 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; repeat: indefinite; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
-       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="12 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; repeat: indefinite; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
-       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="15 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; repeat: indefinite; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
+       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="6 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; loop: true; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
+       <a-entity id="blade1" scale="3 3 3" gltf-model="#blade-gltf" position="7.5 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; loop: true; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
+       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="9 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; loop: true; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
+       <a-entity id="blade1" scale="3 3 3" gltf-model="#blade-gltf" position="10.5 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; loop: true; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
+       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="12 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; loop: true; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
+       <a-entity id="axe1" scale="3 3 3" gltf-model="#axe-gltf" position="15 8 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; loop: true; from: 0 0 0; to: 360 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
 
        <!-- Adding the Bats -->
 
        <a-entity id="bat1" scale="3 3 3" gltf-model="#bat-gltf" position="-12 0 0" rotation="0 0 0" sq-nonconvexcollider="recursive: true">
-         <a-animation attribute="rotation" dur="2600" easing="linear" repeat="indefinite" from="0 0 0" to="0 360 0"></a-animation>
+         <a-animation attribute="rotation" dur="2600" easing="linear" loop="true" from="0 0 0" to="0 360 0"></a-animation>
        </a-entity>
        <a-entity id="bat1" scale="3 3 3" gltf-model="#bat-gltf" position="-10 0 0" rotation="0 0 0" sq-nonconvexcollider="recursive: true">
-         <a-animation attribute="rotation" dur="2300" easing="linear" repeat="indefinite" from="0 0 0" to="0 360 0"></a-animation>
+         <a-animation attribute="rotation" dur="2300" easing="linear" loop="true" from="0 0 0" to="0 360 0"></a-animation>
        </a-entity>
        <a-entity id="bat1" scale="3 3 3" gltf-model="#bat-gltf" position="-8 0 0" rotation="0 0 0" sq-nonconvexcollider="recursive: true">
-         <a-animation attribute="rotation" dur="2000" easing="linear" repeat="indefinite" from="0 0 0" to="0 360 0"></a-animation>
+         <a-animation attribute="rotation" dur="2000" easing="linear" loop="true" from="0 0 0" to="0 360 0"></a-animation>
        </a-entity>
 
        <!-- Adding The Containers To Trigger The Sound Effects -->
