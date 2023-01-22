@@ -59,7 +59,7 @@
       
        <!-- Starting Entity Tag To Contain The Gauntlet-->
 
-      <a-entity id="scene" position="0 0 -10" rotation="0 0 0">
+      <a-entity id="scene" position="0 0 -20" rotation="0 0 0">
 
        <!-- Adding Sounds -->
 
@@ -79,11 +79,6 @@
        <a-entity scale="3 3 0.3" gltf-model="#black-gltf" position="0 4 0" rotation="0 0 0"></a-entity>
 
        
-       <a-obj-model position="0 4 0" rotation="0 0 0" scale="3 3 3" src="#red-obj" mtl="#base-mtl">
-         <a-animation attribute="scale" easing="linear" delay="2000" dur="0.0001" repeat="indefinite" direction="alternate" from="3 3 3" to="0 0 0"></a-animation>
-       </a-obj-model>
-     
-
        <!-- Adding The False Floor Tiles  -->
 
        <a-entity id="bl" scale="3 3 3" gltf-model="#bl-gltf" position="0 3 0" rotation="0 0 0" animation="property: rotation; dur: 1600; easing: linear; loop: true; from: 0 0 0; to: 180 0 0;" sq-nonconvexcollider="recursive: true"></a-entity>
@@ -124,7 +119,7 @@
 
      <!-- Adding The Sky Sphere -->
 
-      <a-sphere id="moon" position="10 0 -100" material="src: moon.jpg; repeat: 1 1" position="0 0 0" radius="80" segments-width="16" segments-height="16" sq-nonconvexcollider="recursive: true"></a-sphere>
+      <a-sphere id="moon" position="10 0 -300" material="src: moon.jpg; repeat: 1 1" position="0 0 0" radius="80" segments-width="16" segments-height="16" sq-nonconvexcollider="recursive: true"></a-sphere>
       
       <a-sky radius="1001" rotation="0 90 0" material="src: #sky; repeat: 15 15" segments-width="16" segments-height="16"></a-sky>
 
