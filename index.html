@@ -28,7 +28,7 @@
     <script type="text/javascript">
       AFRAME.registerComponent('scream-handler', {
     init: function() {
-        this.el.addEventListener('scream-play', ()=>{
+        this.el.addEventListener('trigger-enter', ()=>{
             if(this.el.object3D.userData.isLocalPlayer) {
               var audio = new Audio('scream.wav');
               audio.volume = 1;
